@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/digitalAccountFragment">
+
+
+    <fragment
+        android:id="@+id/bankAccountFragment"
+        android:name="com.etcmobileapps.ibanbankaccountanddigitalaccount.view.fragments.BankAccountFragment"
+        android:label="fragment_bank_account"
+        tools:layout="@layout/fragment_bank_account" />
+    <fragment
+        android:id="@+id/digitalAccountFragment"
+        android:name="com.etcmobileapps.ibanbankaccountanddigitalaccount.view.fragments.DigitalAccountFragment"
+        android:label="fragment_digital_account"
+        tools:layout="@layout/fragment_digital_account" />
+    <activity
+        android:id="@+id/mainActivity2"
+        android:name="com.etcmobileapps.ibanbankaccountanddigitalaccount.view.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
+</navigation>
