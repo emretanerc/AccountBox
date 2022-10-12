@@ -3,19 +3,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/digitalAccountFragment">
+    app:startDestination="@id/bankAccountFragment">
 
 
     <fragment
         android:id="@+id/bankAccountFragment"
         android:name="com.etcmobileapps.ibanbankaccountanddigitalaccount.view.fragments.BankAccountFragment"
         android:label="fragment_bank_account"
-        tools:layout="@layout/fragment_bank_account" />
+        tools:layout="@layout/fragment_bank_account" >
+        <action
+            android:id="@+id/action_bankAccountFragment_to_digitalAccountFragment"
+            app:destination="@id/digitalAccountFragment" />
+    </fragment>
     <fragment
         android:id="@+id/digitalAccountFragment"
         android:name="com.etcmobileapps.ibanbankaccountanddigitalaccount.view.fragments.DigitalAccountFragment"
         android:label="fragment_digital_account"
-        tools:layout="@layout/fragment_digital_account" />
+        tools:layout="@layout/fragment_digital_account" >
+        <action
+            android:id="@+id/action_digitalAccountFragment_to_bankAccountFragment"
+            app:destination="@id/bankAccountFragment" />
+    </fragment>
     <activity
         android:id="@+id/mainActivity2"
         android:name="com.etcmobileapps.ibanbankaccountanddigitalaccount.view.MainActivity"

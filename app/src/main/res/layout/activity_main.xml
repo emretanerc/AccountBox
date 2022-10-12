@@ -13,7 +13,7 @@
         android:id="@+id/materialToolbar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="2.2"
+        android:layout_weight="2.35"
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme">
@@ -26,25 +26,36 @@
             android:fontFamily="sans-serif-condensed-light"
             android:text="Digital Box"
             android:textColor="@color/white"
-            android:textSize="32sp" />
+            android:textSize="@dimen/_32sdp" />
 
     </com.google.android.material.appbar.MaterialToolbar>
 
 
-
-
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recylerView"
+    <fragment
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:id="@+id/fragmentView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="0.35" />
+        app:navGraph="@navigation/nav_graph"
+        android:layout_weight="0.60"/>
+
+
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2.4"
+        android:background="#FFFFFF"
+        android:scaleType="centerCrop"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/buyme" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="2.2"
+        android:layout_weight="2.35"
         android:background="?android:attr/windowBackground"
         app:labelVisibilityMode="labeled"
         app:menu="@menu/bottom_nav_menu" />

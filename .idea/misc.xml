@@ -5,6 +5,8 @@
       <map>
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.165" />
         <entry key="app/src/main/res/layout/fragment_add_content.xml" value="0.11594202898550725" />
+        <entry key="app/src/main/res/layout/fragment_bank_account.xml" value="0.11594202898550725" />
+        <entry key="app/src/main/res/layout/fragment_digital_account.xml" value="0.11594202898550725" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.17135416666666667" />
       </map>
     </option>
