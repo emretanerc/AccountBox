@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Iban ve Dijital Hesaplar</string>
+    <string name="failed">Başarısız!</string>
+    <string name="succesfull">Eklendi!</string>
+
+    <string name="bank_name">Banka Adı</string>
+    <string name="iban_number">IBAN Numaranız</string>
+    <string name="currency">Para Birimi</string>
+    <string name="confirm_button">Onayla</string>
+</resources>

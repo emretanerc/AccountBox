@@ -6,12 +6,12 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 
 @Database(
-    entities = [Account::class,IBAN::class],
+    entities = [Account::class,Iban::class],
     version = 1
 )
 
 abstract class Db: RoomDatabase() {
-    abstract fun getAccountDao(): AccountDao
+    abstract fun getManagerDao(): ManagerDao
     companion object{
         private var instance: Db? = null
         fun getDatabase(context: Context): Db?{

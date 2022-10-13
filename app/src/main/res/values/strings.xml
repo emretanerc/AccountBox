@@ -1,5 +1,11 @@
 <resources>
     <string name="app_name">IBAN Account and Digital Accs</string>
-    <!-- TODO: Remove or change this placeholder text -->
+    <string name="succesfull">Added!</string>
+    <string name="failed">Failed!</string>
+
+    <string name="bank_name">Bank Account</string>
+    <string name="iban_number">IBAN Number</string>
+    <string name="currency">Currency</string>
+    <string name="confirm_button">Confirm</string>
 
 </resources>

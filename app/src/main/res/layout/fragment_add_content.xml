@@ -1,14 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.fragments.AddContent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Add Content" />
+        android:layout_margin="@dimen/_10sdp"
+        android:orientation="vertical">
 
-</FrameLayout>
+        <EditText
+            android:id="@+id/bankName"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:ems="10"
+            android:hint="@string/bank_name" />
+
+        <EditText
+            android:id="@+id/ibanNumber"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:ems="10"
+            android:hint="@string/iban_number" />
+
+        <EditText
+            android:id="@+id/currency"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:ems="10"
+            android:hint="@string/iban_number" />
+
+        <Button
+            android:id="@+id/confirmButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_40sdp"
+            android:layout_marginRight="@dimen/_40sdp"
+            android:text="@string/confirm_button" />
+    </LinearLayout>
+
+
+</LinearLayout>

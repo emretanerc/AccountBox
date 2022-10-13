@@ -9,4 +9,5 @@
         android:id="@+id/page_2"
         android:icon="@drawable/digital"
         android:title="Digital Accounts" />
+
 </menu>

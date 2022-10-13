@@ -25,9 +25,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
      fun add(appNameValue:String,userNameValue:String,passwordValue:String) {
         if(appNameValue != "" || userNameValue != "" || passwordValue != ""){
-            CoroutineScope(Dispatchers.IO).launch {
-                database.getAccountDao().addAccount(Account(1,appNameValue,userNameValue,passwordValue))
-            }
+
             Toast.makeText(getApplication(), "Eklendi!", Toast.LENGTH_LONG).show()
             println("eklendi")
         } else {
