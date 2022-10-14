@@ -1,6 +1,6 @@
 Screenshot (15.10.2022)
 
-<img src="https://github.com/emretanerc/AccountBox/blob/main/preview.png" width="220" height="500">
+<img src="https://github.com/emretanerc/AccountBox/blob/main/preview.png" width="250" height="500">
 
 *It continues to be developed.*
 
