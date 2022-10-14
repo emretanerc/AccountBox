@@ -12,3 +12,5 @@ Don't worry about security. Your information will be safe as it does not require
 - MVVM
 - Viewbinding
 - Room
+- Jetpack Navigation
+- Picasso
