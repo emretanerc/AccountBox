@@ -1,3 +1,7 @@
+Screenshot (15.10.2022)
+
+<img src="https://github.com/emretanerc/AccountBox/blob/main/preview.png" width="250" height="500">
+
 *It continues to be developed.*
 
 It is made for you to take note of your IBAN Numbers, card information and site membership information.We aim to quickly reach the information you need.
