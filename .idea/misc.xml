@@ -3,8 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/bank_account_item.xml" value="0.2" />
+        <entry key="app/src/main/res/drawable/baseline_more_vert_18.xml" value="0.112" />
+        <entry key="app/src/main/res/drawable/baseline_more_vert_20.xml" value="0.112" />
+        <entry key="app/src/main/res/drawable/card.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/layout3d.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/round_content_copy_20.xml" value="0.1435" />
+        <entry key="app/src/main/res/drawable/round_content_copy_24.xml" value="0.1435" />
+        <entry key="app/src/main/res/drawable/round_settings_20.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/round_settings_24.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.106915283203125" />
+        <entry key="app/src/main/res/layout/bank_account_item.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/digital_account_item.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_add_content.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_bank_account.xml" value="0.11594202898550725" />
         <entry key="app/src/main/res/layout/fragment_digital_account.xml" value="0.11594202898550725" />

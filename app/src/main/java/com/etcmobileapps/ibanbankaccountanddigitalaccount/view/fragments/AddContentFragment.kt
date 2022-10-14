@@ -34,8 +34,8 @@ class AddContentFragment : Fragment() {
         bindingContent = FragmentAddContentBinding.inflate(inflater, container, false)
 
 
-        bindingContent.confirmButton.setOnClickListener {
-            var message = viewModel.insertData("s", "s",)
+        bindingContent.confirmButtonDigital.setOnClickListener {
+            var message = viewModel.insertAccountData("s", "s",)
             if (message != null) {
                 Toast.makeText(requireActivity(), R.string.succesfull, Toast.LENGTH_SHORT).show()
             } else {

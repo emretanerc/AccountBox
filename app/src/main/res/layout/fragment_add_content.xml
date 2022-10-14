@@ -7,10 +7,50 @@
 
     <LinearLayout
 
+        android:id="@+id/digitalLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="@dimen/_10sdp"
         android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/websiteName"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:ems="10"
+            android:hint="@string/website_name" />
+
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:ems="10"
+            android:hint="@string/website_username" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:ems="10"
+            android:hint="@string/website_password" />
+
+        <Button
+            android:id="@+id/confirmButtonDigital"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_40sdp"
+            android:layout_marginRight="@dimen/_40sdp"
+            android:text="@string/confirm_button" />
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:id="@+id/bankLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/_10sdp"
+        android:orientation="vertical"
+        android:visibility="gone">
 
         <EditText
             android:id="@+id/bankName"
@@ -34,7 +74,7 @@
             android:hint="@string/iban_number" />
 
         <Button
-            android:id="@+id/confirmButton"
+            android:id="@+id/confirmButtonAccount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/_40sdp"

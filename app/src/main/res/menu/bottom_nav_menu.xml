@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+
     <item
         android:id="@+id/page_1"
-        android:icon="@drawable/card"
-        android:title="Bank IBANS" />
-    <item
-        android:id="@+id/page_2"
         android:icon="@drawable/digital"
         android:title="Digital Accounts" />
+
+    <item
+        android:id="@+id/page_2"
+        android:icon="@drawable/card"
+        android:title="Bank IBANS" />
 
 </menu>

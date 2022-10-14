@@ -1,20 +1,15 @@
-package com.etcmobileapps.ibanbankaccountanddigitalaccount.view
+package com.etcmobileapps.ibanbankaccountanddigitalaccount.view.activitys
 
 
 
 import android.os.Bundle
-import android.widget.EditText
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
-import androidx.navigation.fragment.NavHostFragment
 import com.etcmobileapps.ibanbankaccountanddigitalaccount.R
 import com.etcmobileapps.ibanbankaccountanddigitalaccount.databinding.ActivityMainBinding
-import com.etcmobileapps.ibanbankaccountanddigitalaccount.view.fragments.BankAccountFragment
-import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.etcmobileapps.ibanbankaccountanddigitalaccount.view.MainViewModel
 
 
 private lateinit var bindingMain : ActivityMainBinding
@@ -34,8 +29,17 @@ class MainActivity : AppCompatActivity() {
 
         setupBottomNavigation()
         setupTopBar()
+        initOnClick()
 
 
+    }
+
+
+    fun initOnClick() {
+        bindingMain.addView.setOnClickListener {
+            val navController: NavController = Navigation.findNavController(this, R.id.fragmentView)
+            navController.navigate(R.id.addContentFragment)
+        }
     }
 
 
@@ -62,17 +66,19 @@ class MainActivity : AppCompatActivity() {
 
             when(item.itemId) {
                 R.id.page_1 -> {
+                    if(currentFragment != R.id.digitalAccountFragment){
+                        navController.navigate(R.id.digitalAccountFragment)
+                    }
+
+
+                    true
+                }
+                R.id.page_2 -> {
 
                     if(currentFragment != R.id.bankAccountFragment){
                         navController.navigate(R.id.bankAccountFragment)
                     }
 
-                    true
-                }
-                R.id.page_2 -> {
-                    if(currentFragment != R.id.digitalAccountFragment){
-                        navController.navigate(R.id.digitalAccountFragment)
-                    }
 
                     true
                 }
@@ -81,6 +87,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
 }
 
 

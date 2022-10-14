@@ -10,9 +10,46 @@
     tools:context=".view.MainActivity">
 
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10sdp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_weight="0.5"
+            android:scaleType="fitStart"
+            app:srcCompat="@drawable/logo" />
+
+        <ImageButton
+            android:id="@+id/addView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_weight="2"
+            android:background="#FFFFFF"
+            android:padding="@dimen/_5sdp"
+            android:scaleType="fitEnd"
+            app:srcCompat="@drawable/baseline_add_20" />
+
+        <ImageButton
+            android:id="@+id/settingView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_weight="2"
+            android:background="#FFFFFF"
+            android:padding="@dimen/_5sdp"
+            android:scaleType="fitEnd"
+            app:srcCompat="@drawable/round_settings_20" />
+
+    </LinearLayout>
+
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:visibility="gone">
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/topAppBar"
@@ -21,6 +58,7 @@
             android:layout_height="?attr/actionBarSize"
             android:background="#FFFFFF"
             app:menu="@menu/menu_top_bar"
+            app:navigationIcon="@android:drawable/ic_menu_sort_by_size"
             app:title="@string/app_name"
             app:titleCentered="true" />
 
@@ -28,31 +66,23 @@
 
 
     <fragment
-        android:name="androidx.navigation.fragment.NavHostFragment"
         android:id="@+id/fragmentView"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:navGraph="@navigation/nav_graph"
-        android:layout_weight="0.60"/>
+        android:layout_weight="0.8"
+        app:navGraph="@navigation/nav_graph" />
 
-
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="2.4"
-        android:background="#FFFFFF"
-        android:scaleType="centerCrop"
-        android:visibility="visible"
-        app:srcCompat="@drawable/buyme" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="2.35"
+        android:layout_weight="4"
         android:background="?android:attr/windowBackground"
+        android:visibility="visible"
         app:labelVisibilityMode="labeled"
         app:menu="@menu/bottom_nav_menu" />
+
 
 </LinearLayout>

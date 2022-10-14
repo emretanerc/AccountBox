@@ -8,4 +8,12 @@
     <string name="iban_number">IBAN Numaranız</string>
     <string name="currency">Para Birimi</string>
     <string name="confirm_button">Onayla</string>
+
+
+    <string name="website_name">Website/Uygulama Adı</string>
+    <string name="website_username">Kullanıcı Adı</string>
+    <string name="website_password">Şifre</string>
+
+    <string name="item_copy">Kopyala</string>
+
 </resources>

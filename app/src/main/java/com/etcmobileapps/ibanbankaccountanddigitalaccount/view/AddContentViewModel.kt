@@ -10,6 +10,7 @@ import android.util.Log.DEBUG
 
 
 import androidx.lifecycle.AndroidViewModel
+import com.etcmobileapps.ibanbankaccountanddigitalaccount.model.Account
 import com.etcmobileapps.ibanbankaccountanddigitalaccount.model.Db
 import com.etcmobileapps.ibanbankaccountanddigitalaccount.model.Iban
 import kotlinx.coroutines.CoroutineScope
@@ -25,13 +26,31 @@ class AddContentViewModel(application: Application) : AndroidViewModel(applicati
         database = Db.getDatabase(getApplication())!!
     }
 
+    fun insertAccountData(bankName:String,ibanNumber:String): String {
+        var result: Long? =null
+        CoroutineScope(Dispatchers.IO).launch {
+            try {
+              val id = database.getManagerDao().addAccount(Account( 0,"netflixlogo","Spotify", "tanercetinkaya@gmail.com", "*******"))
+                if (id != null) {
+                   result=id
+                    Log.d("AddContentView:", "Succesfull instert." )
+                }
+            } catch (e: SQLiteException) {
+                Log.d("AddContentView Insert Data Exception: ",e.toString())
+            }
+        }
+
+        return result.toString()
+
+    }
+
     fun insertData(bankName:String,ibanNumber:String): String {
         var result: Long? =null
         CoroutineScope(Dispatchers.IO).launch {
             try {
-              val id = database.getManagerDao().addIban(Iban( 0,"Garanti", "TR45454545", "TL"))
+                val id = database.getManagerDao().addAccount(Account( 0,"netflixlogo","Netflix", "emretanerc", "*******"))
                 if (id != null) {
-                   result=id
+                    result=id
                     Log.d("AddContentView:", "Succesfull instert." )
                 }
             } catch (e: SQLiteException) {

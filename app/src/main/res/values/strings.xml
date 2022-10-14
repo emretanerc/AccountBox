@@ -8,4 +8,10 @@
     <string name="currency">Currency</string>
     <string name="confirm_button">Confirm</string>
 
+    <string name="website_name">Website/Application Name</string>
+    <string name="website_username">Username</string>
+    <string name="website_password">Password</string>
+
+    <string name="item_copy">Copy</string>
+
 </resources>
