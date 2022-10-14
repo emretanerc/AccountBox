@@ -1,4 +1,3 @@
-Screenshot (15.10.2022)
 
 <img src="https://github.com/emretanerc/AccountBox/blob/main/preview.png" width="240" height="500">
 
