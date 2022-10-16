@@ -36,20 +36,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_30sdp"
                 android:layout_weight="1"
-                android:textSize="@dimen/_13sdp"
                 android:gravity="bottom"
                 android:textAllCaps="true"
                 android:textColor="@color/black"
+                android:textIsSelectable="true"
+                android:textSize="@dimen/_13sdp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/ibanNumber"
-                android:textSize="@dimen/_10sdp"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_30sdp"
                 android:layout_weight="1"
                 android:gravity="top"
-                android:textColor="#4A4A4A" />
+                android:textColor="#4A4A4A"
+                android:textIsSelectable="true"
+                android:textSize="@dimen/_10sdp" />
         </LinearLayout>
 
         <TextView
@@ -67,7 +69,8 @@
             android:layout_weight="4.5"
             android:background="#00FFFFFF"
             android:src="@drawable/round_content_copy_20"
-            android:textSize="@dimen/_9sdp" />
+            android:textSize="@dimen/_9sdp"
+            android:visibility="gone" />
 
         <ImageButton
             android:id="@+id/popupBt"

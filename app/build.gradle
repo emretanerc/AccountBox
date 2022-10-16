@@ -37,6 +37,7 @@ android {
 }
 
 dependencies {
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     var nav_version = "2.5.2"
     // Kotlin
     implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")

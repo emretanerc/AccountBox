@@ -1,33 +1,49 @@
 package com.etcmobileapps.ibanbankaccountanddigitalaccount.adapter
 
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
-import android.view.TextureView
 import android.view.View
+import android.view.View.VISIBLE
 import android.view.ViewGroup
-import android.widget.TextView
+import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.etcmobileapps.ibanbankaccountanddigitalaccount.R
-import com.etcmobileapps.ibanbankaccountanddigitalaccount.model.Iban
+import com.etcmobileapps.ibanbankaccountanddigitalaccount.model.IconModel
+import com.squareup.picasso.Picasso
+import kotlinx.coroutines.runBlocking
 
 
-
-class IconAdapter(private val data: List<Iban>, val context: Context) : RecyclerView.Adapter<IconAdapter.ViewHolder>() {
+class IconAdapter(private val data: ArrayList<IconModel>, val context: Context) : RecyclerView.Adapter<IconAdapter.ViewHolder>() {
+    var currentPos:Int=-1
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): ViewHolder {
-        return ViewHolder(LayoutInflater.from(context).inflate(R.layout.bank_account_item, p0, false))
-    }
+        return ViewHolder(LayoutInflater.from(context).inflate(R.layout.icon_item, p0, false))
+
+            }
     override fun getItemCount(): Int=data.size
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.tvBankName?.text = data[position].bankName
-        holder.tvIbanNumber?.text = data[position].ibanNumber
-        holder.tvCurrency?.text = data[position].currency
-    }
-    class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
-        val tvBankName = itemView.findViewById<TextView>(R.id.bankName)
-        val tvIbanNumber = itemView.findViewById<TextView>(R.id.ibanNumber)
-        val tvCurrency = itemView.findViewById<TextView>(R.id.currency)
 
+    @SuppressLint("NotifyDataSetChanged")
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val drawble = data[position].imageId
+        Picasso.get().load(drawble).into(holder.image)
+
+
+
+      holder.image.setOnClickListener {
+
+          holder.tick.visibility = View.VISIBLE
+          currentPos = position
+
+      }
     }
+
+    class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
+        val image = itemView.findViewById<ImageView>(R.id.iconButton)
+        val tick = itemView.findViewById<ImageView>(R.id.tickView)
+    }
+
+
+
 }

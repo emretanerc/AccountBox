@@ -1,15 +1,15 @@
 package com.etcmobileapps.ibanbankaccountanddigitalaccount.adapter
 
-import android.R.attr.label
+import android.annotation.SuppressLint
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
-import android.content.Context.CLIPBOARD_SERVICE
-import android.content.res.Resources
 import android.graphics.*
 import android.graphics.drawable.Drawable
-import android.provider.Settings.Global.getString
+import android.text.InputType
 import android.text.TextPaint
+import android.text.method.HideReturnsTransformationMethod
+import android.text.method.PasswordTransformationMethod
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.View
@@ -18,22 +18,34 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.widget.PopupMenu
-import androidx.core.content.ContextCompat.getSystemService
 import androidx.core.graphics.ColorUtils
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.etcmobileapps.ibanbankaccountanddigitalaccount.R
 import com.etcmobileapps.ibanbankaccountanddigitalaccount.model.Account
+import com.etcmobileapps.ibanbankaccountanddigitalaccount.model.Db
+import com.etcmobileapps.ibanbankaccountanddigitalaccount.view.DigitalAccountViewModel
+import com.etcmobileapps.ibanbankaccountanddigitalaccount.view.activitys.MainActivity
+import com.etcmobileapps.ibanbankaccountanddigitalaccount.view.fragments.DigitalAccountFragment
+import com.google.android.material.snackbar.Snackbar
 import com.squareup.picasso.Picasso
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import kotlin.properties.Delegates
 
 
-class AccountAdapter(private val data: List<Account>, val context: Context) : RecyclerView.Adapter<AccountAdapter.ViewHolder>() {
+class AccountAdapter(private var data: MutableList<Account>, val context: Context) : RecyclerView.Adapter<AccountAdapter.ViewHolder>() {
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): ViewHolder {
         return ViewHolder(LayoutInflater.from(context).inflate(R.layout.digital_account_item, p0, false))
     }
     override fun getItemCount(): Int=data.size
 
+    @SuppressLint("NotifyDataSetChanged")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+         var showHideBoolan:Boolean = false
+
         when(data[position].application)
         {
             "Netflix" -> {
@@ -47,6 +59,18 @@ class AccountAdapter(private val data: List<Account>, val context: Context) : Re
             }
             "Spotify" -> {
                 Picasso.get().load(R.drawable.spotifylogo).into(holder.tvWebsiteLogo)
+            }
+            "Amazon" -> {
+                Picasso.get().load(R.drawable.amazon).into(holder.tvWebsiteLogo)
+            }
+            "Twitter" -> {
+                Picasso.get().load(R.drawable.twitter).into(holder.tvWebsiteLogo)
+            }
+            "Yahoo" -> {
+                Picasso.get().load(R.drawable.yahoo).into(holder.tvWebsiteLogo)
+            }
+            "Reddit" -> {
+                Picasso.get().load(R.drawable.reddit).into(holder.tvWebsiteLogo)
             }
             else ->{
                 val drawable = TextIconDrawable().apply {
@@ -79,21 +103,35 @@ class AccountAdapter(private val data: List<Account>, val context: Context) : Re
             var username = holder.tvUsername.text
             var password = holder.tvPassword.text
 
+            val copiedValue =          context.getString(R.string.copied)
 
             //handle clicks
             if (id == 0) {
                 val textToCopy =  "$websiteLocalValue: $websiteName \n$usernameLocalValue: $username \n$passwordLocalValue: $password \n \n $accountBoxAdValue "
                 val clipboardManager = context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
                 val clipData = ClipData.newPlainText("text", textToCopy)
-                clipboardManager.setPrimaryClip(clipData)    }
+                clipboardManager.setPrimaryClip(clipData)
+                Snackbar.make(context,holder.itemView, copiedValue, Snackbar.LENGTH_LONG).show()}
             else if (id == 1) {
-
+                    val database = Db.getDatabase(context)!!
+                    database.getManagerDao().deleteAccountById(data[position].uid)
+                    data.removeAt(position)
+                    notifyDataSetChanged()
             }
             false
         }
 
 
         holder.popupBt.setOnClickListener(View.OnClickListener { popupMenu.show() })
+        holder.showHide.setOnClickListener(View.OnClickListener {
+         if (showHideBoolan) {
+             holder.tvPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+             showHideBoolan=false
+         } else {
+             holder.tvPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance())
+             showHideBoolan=true
+         }
+        })
     }
     class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
         val tvWebsiteLogo = itemView.findViewById<ImageView>(R.id.websiteLogo)
@@ -101,6 +139,7 @@ class AccountAdapter(private val data: List<Account>, val context: Context) : Re
         val tvUsername = itemView.findViewById<TextView>(R.id.username)
         val tvPassword= itemView.findViewById<TextView>(R.id.password)
         val popupBt= itemView.findViewById<ImageButton>(R.id.popupBt)
+        val showHide= itemView.findViewById<ImageButton>(R.id.showHideBt)
 
     }
 
@@ -141,6 +180,7 @@ class AccountAdapter(private val data: List<Account>, val context: Context) : Re
         override fun getOpacity(): Int = PixelFormat.TRANSLUCENT
 
     }
+
 
 
 }

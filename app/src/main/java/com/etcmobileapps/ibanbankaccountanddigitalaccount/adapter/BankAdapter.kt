@@ -10,7 +10,7 @@ import androidx.appcompat.widget.PopupMenu
 import androidx.recyclerview.widget.RecyclerView
 import com.etcmobileapps.ibanbankaccountanddigitalaccount.R
 import com.etcmobileapps.ibanbankaccountanddigitalaccount.model.Iban
-
+import com.google.android.material.snackbar.Snackbar
 
 
 class BankAdapter(private val data: List<Iban>, val context: Context) : RecyclerView.Adapter<BankAdapter.ViewHolder>() {
@@ -35,20 +35,23 @@ class BankAdapter(private val data: List<Iban>, val context: Context) : Recycler
             val bankNameLocalizationValue: String =  context.getString(R.string.bank_name)
             val ibanNumberLocalizationValue =          context.getString(R.string.iban_number)
             val currencyLocalizationValue =          context.getString(R.string.currency)
-            var accountBoxAdValue =          context.getString(R.string.copy_ad)
+            val accountBoxAdValue =          context.getString(R.string.copy_ad)
 
             //Get Values from TextView
-            var bankName = holder.tvBankName.text
-            var ibanNumber = holder.tvIbanNumber.text
-            var currency = holder.tvCurrency.text
+            val bankName = holder.tvBankName.text
+            val ibanNumber = holder.tvIbanNumber.text
+            val currency = holder.tvCurrency.text
 
-
+            //Toast Message Localization
+            val copiedValue =          context.getString(R.string.copied)
             //handle clicks
             if (id == 0) {
                 val textToCopy =  "$bankNameLocalizationValue: $bankName \n$ibanNumberLocalizationValue: $ibanNumber \n$currencyLocalizationValue: $currency \n \n $accountBoxAdValue "
                 val clipboardManager = context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
                 val clipData = ClipData.newPlainText("text", textToCopy)
-                clipboardManager.setPrimaryClip(clipData)    }
+                clipboardManager.setPrimaryClip(clipData)
+                Snackbar.make(context,holder.itemView, copiedValue,Snackbar.LENGTH_LONG).show()
+            }
             else if (id == 1) {
 
             }

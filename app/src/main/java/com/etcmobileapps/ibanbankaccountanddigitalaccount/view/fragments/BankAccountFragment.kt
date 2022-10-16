@@ -48,7 +48,7 @@ class BankAccountFragment : Fragment() {
 
       fun setupRecylerView() {
 
-          CoroutineScope(Dispatchers.IO).launch {
+          CoroutineScope(Dispatchers.Main).launch {
               var data =  viewModel.getAllIbans()
               Log.d("data:",data.toString())
               bindingBank.bankRecylerView.layoutManager = LinearLayoutManager(requireContext())

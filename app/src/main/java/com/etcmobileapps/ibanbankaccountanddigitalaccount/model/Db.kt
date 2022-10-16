@@ -18,7 +18,9 @@ abstract class Db: RoomDatabase() {
             if (instance == null){
                 instance = Room.databaseBuilder(context,
                     Db::class.java,
-                    "database.db").build()
+                    "database.db")
+                    .allowMainThreadQueries()
+                    .build()
             }
             return instance
         }

@@ -1,14 +1,16 @@
 package com.etcmobileapps.ibanbankaccountanddigitalaccount.view.fragments
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.widget.PopupMenu
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+
 import com.etcmobileapps.ibanbankaccountanddigitalaccount.adapter.AccountAdapter
 import com.etcmobileapps.ibanbankaccountanddigitalaccount.databinding.FragmentBankAccountBinding
 import com.etcmobileapps.ibanbankaccountanddigitalaccount.view.DigitalAccountViewModel
@@ -17,7 +19,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 
-class DigitalAccountFragment : Fragment() {
+class DigitalAccountFragment : Fragment()  {
     private lateinit var bindingBank: FragmentBankAccountBinding
     private lateinit var viewModel: DigitalAccountViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,14 +36,7 @@ class DigitalAccountFragment : Fragment() {
         bindingBank = FragmentBankAccountBinding.inflate(inflater, container, false)
 
         viewModel.initDatabase()
-
-
-
         setupRecylerView()
-
-
-
-
         return bindingBank.root
 
     }
@@ -49,13 +44,19 @@ class DigitalAccountFragment : Fragment() {
 
     fun setupRecylerView() {
 
-        CoroutineScope(Dispatchers.IO).launch {
+        CoroutineScope(Dispatchers.Main).launch {
             var data =  viewModel.getAllAccounts()
             Log.d("data:",data.toString())
-            bindingBank.bankRecylerView.layoutManager = LinearLayoutManager(requireContext())
-            bindingBank.bankRecylerView.adapter = data?.let { AccountAdapter(it,requireContext()) }
+            bindingBank.bankRecylerView.adapter = data?.let { AccountAdapter(it,requireContext())}
+            bindingBank.bankRecylerView.layoutManager = LinearLayoutManager(requireActivity().applicationContext)
+
         }
     }
+
+
+
+
+
 }
 
 

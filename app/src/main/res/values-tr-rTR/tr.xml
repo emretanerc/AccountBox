@@ -14,8 +14,9 @@
     <string name="website_username">Kullanıcı Adı</string>
     <string name="website_password">Şifre</string>
 
-    <string name="addlanding_message">Hesap Türü</string>
-    <string name="addlanding_information">Hesap Bilgileri</string>
+    <string name="addlanding_message"><u>Hesap Türü</u></string>
+    <string name="addlanding_information"><u>Hesap Bilgileri</u></string>
+    <string name="addlanding_icon"><u>İkon Seçimi</u></string>
     <string name="website_checkbox">Website / Uygulama</string>
     <string name="bankaccount_checkbox">Banka Hesabı</string>
     <string name="bankcard_checkbox">Banka Kartı / Sanal Kart</string>
@@ -24,6 +25,7 @@
 
 
     <string name="copy_ad"><u>Bu bilgiler AccountBOX mobil uygulamasında saklanmaktadır. Website: bit.ly/accountbox</u></string>
+    <string name="copied"><u>Bilgileriniz kopyalandı.</u></string>
 
 
 </resources>
