@@ -2,11 +2,10 @@
 17.10.22 Video
 
 
- <iframe width="560" height="315"
-src="https://www.youtube.com/watch?v=i4h6vbZ422M" 
-frameborder="0" 
-allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-allowfullscreen></iframe>
+
+[![Account Box Video](https://i.hizliresim.com/59qutty.png)](https://www.youtube.com/watch?v=i4h6vbZ422M)
+
+ 
 
 *It continues to be developed.*
 
