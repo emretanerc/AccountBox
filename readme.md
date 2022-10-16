@@ -1,5 +1,12 @@
 
-<img src="https://github.com/emretanerc/AccountBox/blob/main/preview.png" width="240" height="500">
+17.10.22 Video
+
+
+ <iframe width="560" height="315"
+src="https://www.youtube.com/watch?v=i4h6vbZ422M" 
+frameborder="0" 
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+allowfullscreen></iframe>
 
 *It continues to be developed.*
 
