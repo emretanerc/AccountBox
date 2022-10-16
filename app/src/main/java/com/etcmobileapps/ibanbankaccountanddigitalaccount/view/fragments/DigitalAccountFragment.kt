@@ -5,13 +5,12 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.PopupMenu
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.etcmobileapps.ibanbankaccountanddigitalaccount.adapter.AccountAdapter
-import com.etcmobileapps.ibanbankaccountanddigitalaccount.adapter.BankAdapter
 import com.etcmobileapps.ibanbankaccountanddigitalaccount.databinding.FragmentBankAccountBinding
-import com.etcmobileapps.ibanbankaccountanddigitalaccount.view.BankAccountViewModel
 import com.etcmobileapps.ibanbankaccountanddigitalaccount.view.DigitalAccountViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

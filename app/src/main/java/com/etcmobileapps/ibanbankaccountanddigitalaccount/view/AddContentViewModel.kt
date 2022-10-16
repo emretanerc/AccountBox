@@ -26,33 +26,27 @@ class AddContentViewModel(application: Application) : AndroidViewModel(applicati
         database = Db.getDatabase(getApplication())!!
     }
 
-    fun insertAccountData(bankName:String,ibanNumber:String): String {
+    fun insertAccountData(account: Account): String {
         var result: Long? =null
         CoroutineScope(Dispatchers.IO).launch {
             try {
-              val id = database.getManagerDao().addAccount(Account( 0,"netflixlogo","Spotify", "tanercetinkaya@gmail.com", "*******"))
-                if (id != null) {
-                   result=id
-                    Log.d("AddContentView:", "Succesfull instert." )
-                }
+              val id = database.getManagerDao().addAccount(account)
+                result=id
+                Log.d("AddContentView:", "Succesfull insert." )
             } catch (e: SQLiteException) {
                 Log.d("AddContentView Insert Data Exception: ",e.toString())
             }
         }
-
         return result.toString()
-
     }
 
-    fun insertData(bankName:String,ibanNumber:String): String {
+    fun insertIbanData(iban: Iban): String {
         var result: Long? =null
         CoroutineScope(Dispatchers.IO).launch {
             try {
-                val id = database.getManagerDao().addAccount(Account( 0,"netflixlogo","Netflix", "emretanerc", "*******"))
-                if (id != null) {
-                    result=id
-                    Log.d("AddContentView:", "Succesfull instert." )
-                }
+                val id = database.getManagerDao().addIban(iban)
+                result=id
+                Log.d("AddContentView:", "Succesfull insert." )
             } catch (e: SQLiteException) {
                 Log.d("AddContentView Insert Data Exception: ",e.toString())
             }

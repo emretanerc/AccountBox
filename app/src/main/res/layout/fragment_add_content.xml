@@ -6,80 +6,163 @@
     android:orientation="vertical">
 
     <LinearLayout
-
-        android:id="@+id/digitalLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="@dimen/_10sdp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_15sdp"
+        android:background="@drawable/layout3d"
         android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/websiteName"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_50sdp"
-            android:ems="10"
-            android:hint="@string/website_name" />
-
-        <EditText
-            android:id="@+id/username"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_50sdp"
-            android:ems="10"
-            android:hint="@string/website_username" />
-
-        <EditText
-            android:id="@+id/password"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_50sdp"
-            android:ems="10"
-            android:hint="@string/website_password" />
-
-        <Button
-            android:id="@+id/confirmButtonDigital"
+        <TextView
+            android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/_40sdp"
-            android:layout_marginRight="@dimen/_40sdp"
-            android:text="@string/confirm_button" />
-    </LinearLayout>
+            android:layout_margin="@dimen/_5sdp"
+            android:fontFamily="sans-serif-condensed"
+            android:text="@string/addlanding_message"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_15sdp" />
 
-    <LinearLayout
-
-        android:id="@+id/bankLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="@dimen/_10sdp"
-        android:orientation="vertical"
-        android:visibility="gone">
-
-        <EditText
-            android:id="@+id/bankName"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_50sdp"
-            android:ems="10"
-            android:hint="@string/bank_name" />
-
-        <EditText
-            android:id="@+id/ibanNumber"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_50sdp"
-            android:ems="10"
-            android:hint="@string/iban_number" />
-
-        <EditText
-            android:id="@+id/currency"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_50sdp"
-            android:ems="10"
-            android:hint="@string/iban_number" />
-
-        <Button
-            android:id="@+id/confirmButtonAccount"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/_40sdp"
-            android:layout_marginRight="@dimen/_40sdp"
-            android:text="@string/confirm_button" />
+            android:layout_margin="@dimen/_5sdp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/accountCheckBox"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_weight="1"
+                android:textSize="@dimen/_10sdp"
+
+                android:text="@string/website_checkbox" />
+
+            <CheckBox
+                android:id="@+id/bankCheckBox"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_weight="1"
+                android:textSize="@dimen/_10sdp"
+
+                android:text="@string/bankaccount_checkbox" />
+
+            <CheckBox
+                android:id="@+id/cardBox"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50sdp"
+
+                android:layout_weight="1"
+                android:text="@string/bankcard_checkbox"
+                android:textSize="@dimen/_10sdp"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/informationTv"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5sdp"
+            android:fontFamily="sans-serif-condensed"
+            android:textSize="@dimen/_15sdp"
+            android:text="@string/addlanding_information"
+            android:textColor="@color/black"
+
+            android:visibility="gone" />
+
+        <LinearLayout
+
+            android:id="@+id/digitalLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/_10sdp"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <EditText
+                android:id="@+id/websiteName"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50sdp"
+                android:ems="10"
+                android:fontFamily="sans-serif-condensed"
+
+                android:hint="@string/website_name"
+                android:textSize="@dimen/_12sdp" />
+
+            <EditText
+                android:id="@+id/username"
+                android:layout_width="match_parent"
+                android:fontFamily="sans-serif-condensed"
+                android:layout_height="@dimen/_50sdp"
+                android:ems="10"
+                android:hint="@string/website_username"
+                android:textSize="@dimen/_12sdp" />
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:fontFamily="sans-serif-condensed"
+                android:layout_height="@dimen/_50sdp"
+                android:ems="10"
+                android:hint="@string/website_password"
+                android:textSize="@dimen/_12sdp" />
+
+
+            <Button
+                android:id="@+id/confirmButtonDigital"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_40sdp"
+                android:layout_marginRight="@dimen/_40sdp"
+                android:text="@string/confirm_button" />
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:id="@+id/bankLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/_10sdp"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <EditText
+                android:id="@+id/bankName"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50sdp"
+                android:fontFamily="sans-serif-condensed"
+                android:textSize="@dimen/_12sdp"
+                android:ems="10"
+                android:hint="@string/bank_name" />
+
+            <EditText
+                android:id="@+id/ibanNumber"
+                android:fontFamily="sans-serif-condensed"
+                android:textSize="@dimen/_12sdp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50sdp"
+                android:ems="10"
+                android:hint="@string/iban_number" />
+
+            <EditText
+                android:id="@+id/currency"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50sdp"
+                android:ems="10"
+                android:fontFamily="sans-serif-condensed"
+                android:hint="@string/currency"
+                android:textSize="@dimen/_12sdp" />
+
+            <Button
+                android:id="@+id/confirmButtonAccount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_40sdp"
+                android:layout_marginRight="@dimen/_40sdp"
+                android:text="@string/confirm_button" />
+        </LinearLayout>
+
     </LinearLayout>
 
 

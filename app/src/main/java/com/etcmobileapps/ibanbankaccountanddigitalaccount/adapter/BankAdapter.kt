@@ -1,11 +1,12 @@
 package com.etcmobileapps.ibanbankaccountanddigitalaccount.adapter
 
+import android.content.ClipData
+import android.content.ClipboardManager
 import android.content.Context
-import android.view.LayoutInflater
-import android.view.TextureView
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import android.widget.ImageButton
 import android.widget.TextView
+import androidx.appcompat.widget.PopupMenu
 import androidx.recyclerview.widget.RecyclerView
 import com.etcmobileapps.ibanbankaccountanddigitalaccount.R
 import com.etcmobileapps.ibanbankaccountanddigitalaccount.model.Iban
@@ -22,11 +23,44 @@ class BankAdapter(private val data: List<Iban>, val context: Context) : Recycler
         holder.tvBankName?.text = data[position].bankName
         holder.tvIbanNumber?.text = data[position].ibanNumber
         holder.tvCurrency?.text = data[position].currency
+
+        val popupMenu = PopupMenu(context, holder.popupBt)
+        popupMenu.menu.add(Menu.NONE, 0, 0, R.string.item_copy);
+        popupMenu.menu.add(Menu.NONE, 1, 1, R.string.item_delete);
+
+        popupMenu.setOnMenuItemClickListener { menuItem -> //get id of the clicked item
+            val id = menuItem.itemId
+
+            //Get Values from R.string for Localization
+            val bankNameLocalizationValue: String =  context.getString(R.string.bank_name)
+            val ibanNumberLocalizationValue =          context.getString(R.string.iban_number)
+            val currencyLocalizationValue =          context.getString(R.string.currency)
+            var accountBoxAdValue =          context.getString(R.string.copy_ad)
+
+            //Get Values from TextView
+            var bankName = holder.tvBankName.text
+            var ibanNumber = holder.tvIbanNumber.text
+            var currency = holder.tvCurrency.text
+
+
+            //handle clicks
+            if (id == 0) {
+                val textToCopy =  "$bankNameLocalizationValue: $bankName \n$ibanNumberLocalizationValue: $ibanNumber \n$currencyLocalizationValue: $currency \n \n $accountBoxAdValue "
+                val clipboardManager = context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+                val clipData = ClipData.newPlainText("text", textToCopy)
+                clipboardManager.setPrimaryClip(clipData)    }
+            else if (id == 1) {
+
+            }
+            false
+        }
+
+        holder.popupBt.setOnClickListener(View.OnClickListener { popupMenu.show() })
     }
     class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
         val tvBankName = itemView.findViewById<TextView>(R.id.bankName)
         val tvIbanNumber = itemView.findViewById<TextView>(R.id.ibanNumber)
         val tvCurrency = itemView.findViewById<TextView>(R.id.currency)
-
+        val popupBt= itemView.findViewById<ImageButton>(R.id.popupBt)
     }
 }

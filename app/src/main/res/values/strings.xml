@@ -12,6 +12,18 @@
     <string name="website_username">Username</string>
     <string name="website_password">Password</string>
 
+
+    <string name="addlanding_message"><u>Account Type</u></string>
+    <string name="addlanding_information"><u>Account Information</u></string>
+    <string name="website_checkbox">Website / Application</string>
+    <string name="bankaccount_checkbox">Bank Account</string>
+    <string name="bankcard_checkbox">Bank Card</string>
     <string name="item_copy">Copy</string>
+    <string name="item_delete">Delete</string>
+
+
+
+
+    <string name="copy_ad"><u>This information is stored by the Account Box application. \n Website: bit.ly/accountbox</u></string>
 
 </resources>

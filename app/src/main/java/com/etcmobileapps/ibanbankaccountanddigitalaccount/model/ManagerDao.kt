@@ -1,7 +1,8 @@
 package com.etcmobileapps.ibanbankaccountanddigitalaccount.model
 
-import androidx.room.*
-import com.etcmobileapps.ibanbankaccountanddigitalaccount.adapter.AccountAdapter
+import androidx.room.Dao
+import androidx.room.Insert
+import androidx.room.Query
 
 @Dao
 
@@ -17,6 +18,12 @@ interface ManagerDao {
 
     @Query("SELECT * FROM accounts")
     fun getAllAccounts(): List<Account>
+
+    @Query("DELETE FROM accounts WHERE uid = :id")
+    fun deleteAccountById(id: Long)
+
+    @Query("DELETE FROM ibans WHERE uid = :id")
+    fun deleteIbanById(id: Long)
 
 }
 
