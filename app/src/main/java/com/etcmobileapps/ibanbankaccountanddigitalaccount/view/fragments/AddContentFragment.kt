@@ -16,7 +16,7 @@ import com.etcmobileapps.ibanbankaccountanddigitalaccount.adapter.IconAdapter
 import com.etcmobileapps.ibanbankaccountanddigitalaccount.databinding.FragmentAddContentBinding
 import com.etcmobileapps.ibanbankaccountanddigitalaccount.model.Account
 import com.etcmobileapps.ibanbankaccountanddigitalaccount.model.Iban
-import com.etcmobileapps.ibanbankaccountanddigitalaccount.view.AddContentViewModel
+import com.etcmobileapps.ibanbankaccountanddigitalaccount.viewmodels.AddContentViewModel
 
 
 class AddContentFragment : Fragment() {

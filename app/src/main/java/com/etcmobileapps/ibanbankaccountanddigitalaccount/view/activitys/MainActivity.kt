@@ -9,7 +9,7 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.etcmobileapps.ibanbankaccountanddigitalaccount.R
 import com.etcmobileapps.ibanbankaccountanddigitalaccount.databinding.ActivityMainBinding
-import com.etcmobileapps.ibanbankaccountanddigitalaccount.view.MainViewModel
+import com.etcmobileapps.ibanbankaccountanddigitalaccount.viewmodels.MainViewModel
 
 
 private lateinit var bindingMain : ActivityMainBinding
@@ -40,21 +40,18 @@ class MainActivity : AppCompatActivity() {
             val navController: NavController = Navigation.findNavController(this, R.id.fragmentView)
             navController.navigate(R.id.addContentFragment)
         }
+
+        bindingMain.settingView.setOnClickListener {
+            val navController: NavController = Navigation.findNavController(this, R.id.fragmentView)
+            navController.navigate(R.id.settingsFragment)
+        }
     }
 
 
     private fun setupTopBar() {
          val navController: NavController = Navigation.findNavController(this, R.id.fragmentView)
 
-        bindingMain.topAppBar.setOnMenuItemClickListener { menuItem ->
-            when (menuItem.itemId) {
-                R.id.favorite -> {
-                   navController.navigate(R.id.addContentFragment)
-                    true
-                }
-                else -> false
-            }
-        }
+
     }
 
     private fun setupBottomNavigation() {

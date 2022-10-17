@@ -10,7 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.etcmobileapps.ibanbankaccountanddigitalaccount.adapter.BankAdapter
 import com.etcmobileapps.ibanbankaccountanddigitalaccount.databinding.FragmentBankAccountBinding
-import com.etcmobileapps.ibanbankaccountanddigitalaccount.view.BankAccountViewModel
+import com.etcmobileapps.ibanbankaccountanddigitalaccount.viewmodels.BankAccountViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

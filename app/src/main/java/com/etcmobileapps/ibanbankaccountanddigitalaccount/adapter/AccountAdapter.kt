@@ -6,7 +6,6 @@ import android.content.ClipboardManager
 import android.content.Context
 import android.graphics.*
 import android.graphics.drawable.Drawable
-import android.text.InputType
 import android.text.TextPaint
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
@@ -19,20 +18,12 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.widget.PopupMenu
 import androidx.core.graphics.ColorUtils
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.etcmobileapps.ibanbankaccountanddigitalaccount.R
 import com.etcmobileapps.ibanbankaccountanddigitalaccount.model.Account
 import com.etcmobileapps.ibanbankaccountanddigitalaccount.model.Db
-import com.etcmobileapps.ibanbankaccountanddigitalaccount.view.DigitalAccountViewModel
-import com.etcmobileapps.ibanbankaccountanddigitalaccount.view.activitys.MainActivity
-import com.etcmobileapps.ibanbankaccountanddigitalaccount.view.fragments.DigitalAccountFragment
 import com.google.android.material.snackbar.Snackbar
 import com.squareup.picasso.Picasso
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 import kotlin.properties.Delegates
 
 

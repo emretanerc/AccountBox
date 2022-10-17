@@ -1,8 +1,6 @@
 package com.etcmobileapps.ibanbankaccountanddigitalaccount.view.fragments
 
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -13,7 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 
 import com.etcmobileapps.ibanbankaccountanddigitalaccount.adapter.AccountAdapter
 import com.etcmobileapps.ibanbankaccountanddigitalaccount.databinding.FragmentBankAccountBinding
-import com.etcmobileapps.ibanbankaccountanddigitalaccount.view.DigitalAccountViewModel
+import com.etcmobileapps.ibanbankaccountanddigitalaccount.viewmodels.DigitalAccountViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

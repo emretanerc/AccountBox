@@ -33,4 +33,8 @@
         android:id="@+id/addContentFragment"
         android:name="com.etcmobileapps.ibanbankaccountanddigitalaccount.view.fragments.AddContentFragment"
         android:label="AddContentFragment" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.etcmobileapps.ibanbankaccountanddigitalaccount.view.fragments.SettingsFragment"
+        android:label="SettingsFragment" />
 </navigation>

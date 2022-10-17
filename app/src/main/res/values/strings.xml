@@ -20,7 +20,8 @@
 
     <string name="item_copy">Copy</string>
     <string name="item_delete">Delete</string>
-
+    <string name="import_button">Import</string>
+    <string name="export_button">Export</string>
     <string name="copy_ad"><u>This information is stored by the Account Box application. \n Website: bit.ly/accountbox</u></string>
     <string name="copied"><u>Your information has been copied.</u></string>
 </resources>

@@ -24,6 +24,9 @@
     <string name="item_delete">Sil</string>
 
 
+    <string name="import_button">Yedek Yükle</string>
+    <string name="export_button">Yedekle</string>
+
     <string name="copy_ad"><u>Bu bilgiler AccountBOX mobil uygulamasında saklanmaktadır. Website: bit.ly/accountbox</u></string>
     <string name="copied"><u>Bilgileriniz kopyalandı.</u></string>
 

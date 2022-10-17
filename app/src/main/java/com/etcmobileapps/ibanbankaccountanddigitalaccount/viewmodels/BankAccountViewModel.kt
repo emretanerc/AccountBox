@@ -1,4 +1,4 @@
-package com.etcmobileapps.ibanbankaccountanddigitalaccount.view
+package com.etcmobileapps.ibanbankaccountanddigitalaccount.viewmodels
 
 import android.app.Application
 import android.database.sqlite.SQLiteException
