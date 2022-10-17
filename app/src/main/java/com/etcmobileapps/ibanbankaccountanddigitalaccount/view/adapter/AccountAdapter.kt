@@ -1,4 +1,4 @@
-package com.etcmobileapps.ibanbankaccountanddigitalaccount.adapter
+package com.etcmobileapps.ibanbankaccountanddigitalaccount.view.adapter
 
 import android.annotation.SuppressLint
 import android.content.ClipData

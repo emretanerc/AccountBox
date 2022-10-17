@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.etcmobileapps.ibanbankaccountanddigitalaccount.adapter.BankAdapter
+import com.etcmobileapps.ibanbankaccountanddigitalaccount.view.adapter.BankAdapter
 import com.etcmobileapps.ibanbankaccountanddigitalaccount.databinding.FragmentBankAccountBinding
 import com.etcmobileapps.ibanbankaccountanddigitalaccount.viewmodels.BankAccountViewModel
 import kotlinx.coroutines.CoroutineScope

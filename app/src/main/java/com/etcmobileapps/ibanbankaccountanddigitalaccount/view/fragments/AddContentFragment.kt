@@ -11,7 +11,7 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.GridLayoutManager
 import com.etcmobileapps.ibanbankaccountanddigitalaccount.R
-import com.etcmobileapps.ibanbankaccountanddigitalaccount.adapter.IconAdapter
+import com.etcmobileapps.ibanbankaccountanddigitalaccount.view.adapter.IconAdapter
 
 import com.etcmobileapps.ibanbankaccountanddigitalaccount.databinding.FragmentAddContentBinding
 import com.etcmobileapps.ibanbankaccountanddigitalaccount.model.Account

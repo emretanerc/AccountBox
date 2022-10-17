@@ -1,18 +1,16 @@
-package com.etcmobileapps.ibanbankaccountanddigitalaccount.adapter
+package com.etcmobileapps.ibanbankaccountanddigitalaccount.view.adapter
 
 
 import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
-import android.view.View.VISIBLE
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.etcmobileapps.ibanbankaccountanddigitalaccount.R
 import com.etcmobileapps.ibanbankaccountanddigitalaccount.model.IconModel
 import com.squareup.picasso.Picasso
-import kotlinx.coroutines.runBlocking
 
 
 class IconAdapter(private val data: ArrayList<IconModel>, val context: Context) : RecyclerView.Adapter<IconAdapter.ViewHolder>() {
