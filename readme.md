@@ -1,5 +1,11 @@
 
-<img src="https://github.com/emretanerc/AccountBox/blob/main/preview.png" width="240" height="500">
+17.10.22 Video
+
+
+
+[![Account Box Video](https://i.hizliresim.com/59qutty.png)](https://www.youtube.com/watch?v=i4h6vbZ422M)
+
+ 
 
 *It continues to be developed.*
 
