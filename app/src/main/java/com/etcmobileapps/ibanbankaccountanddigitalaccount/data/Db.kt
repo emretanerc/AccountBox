@@ -1,4 +1,4 @@
-package com.etcmobileapps.ibanbankaccountanddigitalaccount.model
+package com.etcmobileapps.ibanbankaccountanddigitalaccount.data
 
 import android.content.Context
 import androidx.room.Database

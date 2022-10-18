@@ -20,8 +20,8 @@ import androidx.appcompat.widget.PopupMenu
 import androidx.core.graphics.ColorUtils
 import androidx.recyclerview.widget.RecyclerView
 import com.etcmobileapps.ibanbankaccountanddigitalaccount.R
-import com.etcmobileapps.ibanbankaccountanddigitalaccount.model.Account
-import com.etcmobileapps.ibanbankaccountanddigitalaccount.model.Db
+import com.etcmobileapps.ibanbankaccountanddigitalaccount.data.Account
+import com.etcmobileapps.ibanbankaccountanddigitalaccount.data.Db
 import com.google.android.material.snackbar.Snackbar
 import com.squareup.picasso.Picasso
 import kotlin.properties.Delegates
@@ -107,7 +107,7 @@ class AccountAdapter(private var data: MutableList<Account>, val context: Contex
                     val database = Db.getDatabase(context)!!
                     database.getManagerDao().deleteAccountById(data[position].uid)
                     data.removeAt(position)
-                    notifyDataSetChanged()
+                    notifyItemRangeChanged(0,position)
             }
             false
         }

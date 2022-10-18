@@ -1,4 +1,4 @@
-package com.etcmobileapps.ibanbankaccountanddigitalaccount.viewmodels
+package com.etcmobileapps.ibanbankaccountanddigitalaccount.view.ui.addcontent
 
 
 
@@ -8,10 +8,10 @@ import android.database.sqlite.SQLiteException
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import com.etcmobileapps.ibanbankaccountanddigitalaccount.R
-import com.etcmobileapps.ibanbankaccountanddigitalaccount.model.Account
-import com.etcmobileapps.ibanbankaccountanddigitalaccount.model.Db
-import com.etcmobileapps.ibanbankaccountanddigitalaccount.model.Iban
-import com.etcmobileapps.ibanbankaccountanddigitalaccount.model.IconModel
+import com.etcmobileapps.ibanbankaccountanddigitalaccount.data.Account
+import com.etcmobileapps.ibanbankaccountanddigitalaccount.data.Db
+import com.etcmobileapps.ibanbankaccountanddigitalaccount.data.Iban
+import com.etcmobileapps.ibanbankaccountanddigitalaccount.data.IconModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -19,10 +19,8 @@ import kotlinx.coroutines.launch
 
 class AddContentViewModel(application: Application) : AndroidViewModel(application) {
     private lateinit var database: Db
-    private val data: List<IconModel>? = null
 
-
-    fun createLogos(): ArrayList<IconModel> {
+    fun getLogos(): ArrayList<IconModel> {
         val data: ArrayList<IconModel> = ArrayList()
         data.add(IconModel(R.drawable.facebooklogo, "Facebook"))
         data.add(IconModel(R.drawable.netlixlogo, "Netflix"))
@@ -67,9 +65,7 @@ class AddContentViewModel(application: Application) : AndroidViewModel(applicati
                 Log.d("AddContentView Insert Data Exception: ",e.toString())
             }
         }
-
         return result.toString()
-
     }
 
 

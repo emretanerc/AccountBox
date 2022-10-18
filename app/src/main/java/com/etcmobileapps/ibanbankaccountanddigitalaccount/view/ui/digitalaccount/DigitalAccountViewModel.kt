@@ -1,11 +1,11 @@
-package com.etcmobileapps.ibanbankaccountanddigitalaccount.viewmodels
+package com.etcmobileapps.ibanbankaccountanddigitalaccount.view.ui.digitalaccount
 
 import android.app.Application
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.room.Room
-import com.etcmobileapps.ibanbankaccountanddigitalaccount.model.Account
-import com.etcmobileapps.ibanbankaccountanddigitalaccount.model.Db
+import com.etcmobileapps.ibanbankaccountanddigitalaccount.data.Account
+import com.etcmobileapps.ibanbankaccountanddigitalaccount.data.Db
 
 
 class DigitalAccountViewModel(application: Application) : AndroidViewModel(application) {

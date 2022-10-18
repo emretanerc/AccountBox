@@ -1,4 +1,4 @@
-package com.etcmobileapps.ibanbankaccountanddigitalaccount.view.fragments
+package com.etcmobileapps.ibanbankaccountanddigitalaccount.view.ui.addcontent
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -14,9 +14,8 @@ import com.etcmobileapps.ibanbankaccountanddigitalaccount.R
 import com.etcmobileapps.ibanbankaccountanddigitalaccount.view.adapter.IconAdapter
 
 import com.etcmobileapps.ibanbankaccountanddigitalaccount.databinding.FragmentAddContentBinding
-import com.etcmobileapps.ibanbankaccountanddigitalaccount.model.Account
-import com.etcmobileapps.ibanbankaccountanddigitalaccount.model.Iban
-import com.etcmobileapps.ibanbankaccountanddigitalaccount.viewmodels.AddContentViewModel
+import com.etcmobileapps.ibanbankaccountanddigitalaccount.data.Account
+import com.etcmobileapps.ibanbankaccountanddigitalaccount.data.Iban
 
 
 class AddContentFragment : Fragment() {
@@ -53,54 +52,35 @@ class AddContentFragment : Fragment() {
 
     private fun initOnClicks() {
 
-        // EditText - Digital
-        val websiteNameTv =  bindingContent.websiteName
-        val usernameTv =  bindingContent.username
-        val passwordTv =  bindingContent.password
-
-        // EditText - Bank Account
-        val bankNameTv =  bindingContent.bankName
-        val ibanNumberTv =  bindingContent.ibanNumber
-        val currencyTv =  bindingContent.currency
-
-        // Checkbox
-        val bankCheckBox =  bindingContent.bankCheckBox
-        val accountCheckBox =  bindingContent.accountCheckBox
-
-        // Button
-        val confirmButtonDigital =  bindingContent.confirmButtonDigital
-        val confirmButtonAccount =  bindingContent.confirmButtonAccount
-
-
-        confirmButtonDigital.setOnClickListener {
+        bindingContent.confirmButtonDigital.setOnClickListener {
             viewModel.insertAccountData(Account(
                 0,
                 "Default",
-                websiteNameTv.text.toString(),
-                usernameTv.text.toString(),
-                passwordTv.text.toString(),
+                bindingContent.websiteName.text.toString(),
+                bindingContent.username.text.toString(),
+                bindingContent.password.text.toString(),
             ))
             navController?.navigate(R.id.digitalAccountFragment)
             Toast.makeText(requireContext(), R.string.succesfull, Toast.LENGTH_SHORT).show()
         }
-        confirmButtonAccount.setOnClickListener {
+        bindingContent.confirmButtonAccount.setOnClickListener {
               viewModel.insertIbanData(Iban(
                 0,
-                bankNameTv.text.toString(),
-                ibanNumberTv.text.toString(),
-                currencyTv.text.toString()))
+                bindingContent.bankName.text.toString(),
+                bindingContent.ibanNumber.text.toString(),
+                bindingContent.currency.text.toString()))
             navController?.navigate(R.id.bankAccountFragment)
             Toast.makeText(requireContext(), R.string.succesfull, Toast.LENGTH_SHORT).show()
         }
 
-        bankCheckBox.setOnClickListener {
+        bindingContent.bankCheckBox.setOnClickListener {
             bindingContent.informationTv.visibility = View.VISIBLE
             bindingContent.accountCheckBox.isChecked = false
             bindingContent.bankCheckBox.isChecked = true
             bindingContent.bankLayout.visibility = View.VISIBLE
             bindingContent.digitalLayout.visibility = View.GONE
         }
-        accountCheckBox.setOnClickListener {
+        bindingContent.accountCheckBox.setOnClickListener {
             bindingContent.informationTv.visibility = View.VISIBLE
             bindingContent.bankLayout.visibility = View.GONE
             bindingContent.digitalLayout.visibility = View.VISIBLE
@@ -111,7 +91,7 @@ class AddContentFragment : Fragment() {
     }
 
     private fun setupLogos() {
-     var  data =  viewModel.createLogos()
+     val  data =  viewModel.getLogos()
         bindingContent.digitalRecylerview.adapter = adapter
         adapter?.notifyDataSetChanged()
         //bindingContent.digitalRecylerview.layoutManager = LinearLayoutManager(requireActivity().applicationContext)

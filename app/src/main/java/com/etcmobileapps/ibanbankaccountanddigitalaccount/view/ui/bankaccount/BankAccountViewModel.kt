@@ -1,15 +1,10 @@
-package com.etcmobileapps.ibanbankaccountanddigitalaccount.viewmodels
+package com.etcmobileapps.ibanbankaccountanddigitalaccount.view.ui.bankaccount
 
 import android.app.Application
-import android.database.sqlite.SQLiteException
 import android.util.Log
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.lifecycle.AndroidViewModel
-import com.etcmobileapps.ibanbankaccountanddigitalaccount.model.Db
-import com.etcmobileapps.ibanbankaccountanddigitalaccount.model.Iban
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
+import com.etcmobileapps.ibanbankaccountanddigitalaccount.data.Db
+import com.etcmobileapps.ibanbankaccountanddigitalaccount.data.Iban
 
 
 class BankAccountViewModel(application: Application) : AndroidViewModel(application) {

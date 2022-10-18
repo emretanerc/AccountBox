@@ -1,4 +1,4 @@
-package com.etcmobileapps.ibanbankaccountanddigitalaccount.view.fragments
+package com.etcmobileapps.ibanbankaccountanddigitalaccount.view.ui.digitalaccount
 
 import android.os.Bundle
 import android.util.Log
@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 
 import com.etcmobileapps.ibanbankaccountanddigitalaccount.view.adapter.AccountAdapter
 import com.etcmobileapps.ibanbankaccountanddigitalaccount.databinding.FragmentBankAccountBinding
-import com.etcmobileapps.ibanbankaccountanddigitalaccount.viewmodels.DigitalAccountViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -40,14 +39,12 @@ class DigitalAccountFragment : Fragment()  {
     }
 
 
-    fun setupRecylerView() {
-
+    private fun setupRecylerView() {
         CoroutineScope(Dispatchers.Main).launch {
             var data =  viewModel.getAllAccounts()
             Log.d("data:",data.toString())
-            bindingBank.bankRecylerView.adapter = data?.let { AccountAdapter(it,requireContext())}
+            bindingBank.bankRecylerView.adapter = AccountAdapter(data,requireContext())
             bindingBank.bankRecylerView.layoutManager = LinearLayoutManager(requireActivity().applicationContext)
-
         }
     }
 

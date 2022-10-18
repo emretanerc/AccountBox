@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.etcmobileapps.ibanbankaccountanddigitalaccount.R
-import com.etcmobileapps.ibanbankaccountanddigitalaccount.model.IconModel
+import com.etcmobileapps.ibanbankaccountanddigitalaccount.data.IconModel
 import com.squareup.picasso.Picasso
 
 
@@ -30,10 +30,8 @@ class IconAdapter(private val data: ArrayList<IconModel>, val context: Context) 
 
 
       holder.image.setOnClickListener {
-
           holder.tick.visibility = View.VISIBLE
           currentPos = position
-
       }
     }
 

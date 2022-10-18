@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.appcompat.widget.PopupMenu
 import androidx.recyclerview.widget.RecyclerView
 import com.etcmobileapps.ibanbankaccountanddigitalaccount.R
-import com.etcmobileapps.ibanbankaccountanddigitalaccount.model.Iban
+import com.etcmobileapps.ibanbankaccountanddigitalaccount.data.Iban
 import com.google.android.material.snackbar.Snackbar
 
 

@@ -1,4 +1,4 @@
-package com.etcmobileapps.ibanbankaccountanddigitalaccount.view.fragments
+package com.etcmobileapps.ibanbankaccountanddigitalaccount.view.ui.settings
 
 
 import android.os.Bundle
@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 
 import com.etcmobileapps.ibanbankaccountanddigitalaccount.databinding.FragmentSettingsBinding
-import com.etcmobileapps.ibanbankaccountanddigitalaccount.viewmodels.SettingsViewModel
 
 
 class SettingsFragment : Fragment()  {
