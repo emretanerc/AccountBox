@@ -18,7 +18,8 @@ Don't worry about security. Your information will be safe as it does not require
 - Viewbinding
 - Room
 - Jetpack Navigation
-- Picasso
+- Language Support (Turkish & English)
+- Picasso Library
 
 
 
