@@ -16,22 +16,10 @@ class BankAccountViewModel(application: Application) : AndroidViewModel(applicat
         database = Db.getDatabase(getApplication())!!
     }
 
-
-
        fun getAllIbans(): MutableList<Iban> {
-
-
             data = database.getManagerDao().getAllIbans()
                 Log.d("data:",data.toString())
 
            return data
     }
-
-
-
 }
-
-
-
-
-
