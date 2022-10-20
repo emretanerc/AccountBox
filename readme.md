@@ -11,14 +11,15 @@
 
 It is made for you to take note of your IBAN Numbers, card information and site membership information.We aim to quickly reach the information you need.
 
-Don't worry about security. Your information will be safe as it does not require internet permission. It will be ad-free.
+Don't worry about security.The information is stored locally on your phone. Your information will be safe as it does not require internet permission. It will be ad-free.
 
 
 - MVVM
 - Viewbinding
 - Room
 - Jetpack Navigation
-- Picasso
+- Language Support (Turkish & English)
+- Picasso Library
 
 
 
