@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/bankAccountFragment"
-        android:name="com.etcmobileapps.ibanbankaccountanddigitalaccount.view.ui.bankaccount.BankAccountFragment"
+        android:name="com.etcmobileapps.accountbox.view.ui.bankaccount.BankAccountFragment"
         android:label="fragment_bank_account"
         tools:layout="@layout/fragment_bank_account" >
         <action
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/digitalAccountFragment"
-        android:name="com.etcmobileapps.ibanbankaccountanddigitalaccount.view.ui.digitalaccount.DigitalAccountFragment"
+        android:name="com.etcmobileapps.accountbox.view.ui.digitalaccount.DigitalAccountFragment"
         android:label="fragment_digital_account"
         tools:layout="@layout/fragment_digital_account" >
         <action
@@ -26,15 +26,15 @@
     </fragment>
     <activity
         android:id="@+id/mainActivity2"
-        android:name="com.etcmobileapps.ibanbankaccountanddigitalaccount.view.MainActivity"
+        android:name="com.etcmobileapps.accountbox.view.MainActivity"
         android:label="activity_main"
         tools:layout="@layout/activity_main" />
     <fragment
         android:id="@+id/addContentFragment"
-        android:name="com.etcmobileapps.ibanbankaccountanddigitalaccount.view.ui.addcontent.AddContentFragment"
+        android:name="com.etcmobileapps.accountbox.view.ui.addcontent.AddContentFragment"
         android:label="AddContentFragment" />
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.etcmobileapps.ibanbankaccountanddigitalaccount.view.ui.settings.SettingsFragment"
+        android:name="com.etcmobileapps.accountbox.view.ui.settings.SettingsFragment"
         android:label="SettingsFragment" />
 </navigation>
