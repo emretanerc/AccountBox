@@ -3,7 +3,7 @@
 
 
 
-[![Account Box Video](https://i.hizliresim.com/59qutty.png)](https://www.youtube.com/watch?v=i4h6vbZ422M)
+[![Account Box Video](https://i.hizliresim.com/5j89ko5.png)](https://www.youtube.com/watch?v=i4h6vbZ422M)
 
  
 
